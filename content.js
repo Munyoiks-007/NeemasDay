@@ -91,7 +91,7 @@ window.SITE = {
     },
     {
       date: "Oct 2026",
-      title: "Auraaa 🤩🤩 ",
+      title: "Baddesttt 🤩🤩 ",
       text: "Ati nipige kaah siangalii",
       photo: "images/aura.jpeg"
     }
