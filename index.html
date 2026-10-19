@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy birthday</title>
+
+  <!-- Fonts load when you're online; offline it falls back to Georgia / system fonts and still looks good. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero" id="top">
+    <div class="hero-text">
+      <h1 id="heroTitle"></h1>
+      <p class="hero-intro" id="heroIntro"></p>
+      <p class="counter" id="counter" hidden></p>
+      <a class="btn" href="#story">Start from the beginning</a>
+    </div>
+    <div class="hero-photo">
+      <div class="arch"><img id="heroImg" alt=""></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="video-section" id="videoSection" aria-labelledby="videoTitle">
+      <h2 id="videoTitle" class="section-title"></h2>
+      <p class="section-sub" id="videoStatus" role="status"></p>
+      <video class="birthday-video" id="birthdayVideo" controls playsinline preload="metadata"></video>
+      <div class="video-controls" id="videoControls" hidden>
+        <button class="btn video-switch" id="previousVideo" type="button">Previous video</button>
+        <p id="videoPosition" aria-live="polite"></p>
+        <button class="btn video-switch" id="nextVideo" type="button">Next video</button>
+      </div>
+    </section>
+
+    <section class="story" id="story" aria-labelledby="storyTitle">
+      <h2 id="storyTitle" class="section-title"></h2>
+      <p class="section-sub" id="storySub"></p>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="notes" id="notes" aria-labelledby="notesTitle">
+      <h2 id="notesTitle" class="section-title"></h2>
+      <p class="section-sub" id="notesSub"></p>
+      <ul class="wall" id="wall"></ul>
+    </section>
+
+    <section class="letter-section" id="letterSection" aria-labelledby="letterTitle">
+      <h2 id="letterTitle" class="section-title"></h2>
+      <button class="btn btn-light" id="letterBtn" aria-expanded="false" aria-controls="letter"></button>
+      <article class="letter" id="letter" hidden></article>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose" aria-label="Close photo">&times;</button>
+    <img id="lbImg" alt="">
+    <p id="lbCap"></p>
+  </dialog>
+
+  <div class="music-controls" id="musicControls" hidden>
+    <button class="music" id="music" type="button" aria-pressed="false">Play song</button>
+    <button class="music music-next" id="nextSong" type="button">Next song</button>
+  </div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
